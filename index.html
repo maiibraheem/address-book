@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title>Contacts Form</title>
+
+  <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+</head>
+
+<body>
+  <div class="container">
+
+
+    <header>
+      <nav class="nav nav-pills">
+        <a class="nav-item nav-link active" href="#">Contact Form</a>
+        <a class="nav-item nav-link" href="contacts-list.html">Address Book</a>
+      </nav>
+    </header>
+
+
+    <div class="row">
+      <div class="col-md-12 col-md-offset-12">
+        <br/>
+        <p>Please fill the form</p>
+        <form class="needs-validation" action="#" method="post" novalidate>
+          <div class="form-row">
+            <div class="col-md-4">
+              <label for="validationCustom01">Name</label>
+              <input name="name" type="text" class="form-control" id="validationCustom01" placeholder="Full name" required>
+              <div class="invalid-feedback">
+                Please enter your full name.
+              </div>
+            </div>
+            <div class="col-md-4">
+              <label for="validationCustom02">Nickname</label>
+              <input name="nickname" type="text" class="form-control" id="validationCustom02" placeholder="nickname">
+            </div>
+
+            <div class="col-md-4">
+              <label for="validationCustom05">Phone number</label>
+              <input name="phone" type="text" class="form-control" id="validationCustom05" placeholder="Phone number" required>
+              <div class="invalid-feedback">
+                Please provide a valid Phone number.
+              </div>
+            </div>
+
+
+          </div>
+          <div class="form-row">
+
+
+            <div class="col-md-6">
+              <label for="validationCustomUsername">Email</label>
+              <div class="input-group">
+                <div class="input-group-prepend">
+                  <span class="input-group-text" id="inputGroupPrepend">@</span>
+                </div>
+                <input name="email" type="text" class="form-control" id="validationCustomUsername" placeholder="Email" aria-describedby="inputGroupPrepend">
+
+              </div>
+            </div>
+
+            <div class="col-md-3 offset-md-2">
+              <label for="">Gender</label>
+              <br/>
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="gender" id="inlineRadio1" value="Male">
+                <label class="form-check-label" for="inlineRadio1">Male</label>
+              </div>
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="gender" id="inlineRadio2" value="Female">
+                <label class="form-check-label" for="inlineRadio2">Female</label>
+              </div>
+            </div>
+          </div>
+
+          <button class="btn btn-primary float-right" type="submit">Submit</button>
+        </form>
+
+      </div>
+      <!-- /.col-lg-12 -->
+    </div>
+    <!-- /.row -->
+
+
+  </div>
+  <script type="text/javascript" src="node_modules/jquery/dist/jquery.min.js"></script>
+  <script type="text/javascript" src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+  <script type="text/javascript" src="js/script.js"></script>
+  <script>
+    // Bootstrap fields validation script
+    (function() {
+      'use strict';
+      window.addEventListener('load', function() {
+        // Fetch all the forms we want to apply custom Bootstrap validation styles to
+        var forms = document.getElementsByClassName('needs-validation');
+        // Loop over them and prevent submission
+        var validation = Array.prototype.filter.call(forms, function(form) {
+          form.addEventListener('submit', function(event) {
+            if (form.checkValidity() === false) {
+              event.preventDefault();
+              event.stopPropagation();
+            }
+            form.classList.add('was-validated');
+          }, false);
+        });
+      }, false);
+    })();
+  </script>
+
+
+</body>
+
+</html>
